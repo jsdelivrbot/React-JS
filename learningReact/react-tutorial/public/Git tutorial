@@ -1,0 +1,166 @@
+Git tutorial
+Env setup of react project...
+And wo js wali application local pr bhi banao..
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+React is front end library developed by Facebook. It's used for handling view layer for web and mobile apps. 
+ReactJS is JavaScript library used for building reusable UI components. It encourages the creation of reusable UI components which present data that changes over time. Lots of people use React as the V in MVC. React abstracts away the DOM from you, giving a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using React Native. 
+
+EcmaScript 2015 syntax 
+
+What is a MVC application?
+The Model-View-Controller (MVC) architectural pattern separates an application into three main components: the model, the view, and the controller. 
+
+Dom in web development?
+The Document Object Model (DOM) is a programming API for HTML and XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated.The Document Object Model (DOM) is a cross-platform and language-independent convention for representing and interacting with objects in HTML, XHTML and XML documents. The nodes of every document are organized in a tree structure, called the DOM tree.
+
+
+React Features
+JSX − JSX is JavaScript syntax extension. It isn't necessary to use JSX in React development, but it is recommended.
+
+Components − React is all about components. You need to think of everything as a component. This will help you to maintain the code when working on larger scale projects.
+
+Unidirectional data flow and Flux − React implements one way data flow which makes it easy to reason about your app. Flux is a pattern that helps keeping your data unidirectional.
+
+License − React is licensed under the Facebook Inc. Documentation is licensed under CC BY 4.0.
+
+
+
+React Advantages
+React uses virtual DOM which is JavaScript object. This will improve apps performance since JavaScript virtual DOM is faster than the regular DOM.
+
+React can be used on client and server side.
+
+Component and Data patterns improve readability which helps to maintain larger apps.
+
+React can be used with other frameworks.
+
+
+
+-----------------------------------------------
+
+React uses JSX for templating
+JSX is faster because it performs optimization while compiling code to JavaScript.
+It is also type-safe and most of the errors can be caught during compilation.
+JSX makes it easier and faster to write templates if you are familiar with HTML.
+
+
+
+When you want to add custom attribute, you need to use data- prefix. 
+
+JavaScript Expressions
+JavaScript expressions can be used inside of JSX. You just need to wrap it with curly brackets {}.
+
+
+Since JSX is JavaScript, identifiers such as class and for are discouraged as XML attribute names. Instead, React DOM components expect DOM property names like className and htmlFor, respectively.
+
+
+
+----------------------------------
+
+
+GIT
+
+Git is a distributed revision control and source code management system with an emphasis on speed.
+
+
+Version Control System (VCS) is a software that helps software developers to work together and maintain a complete history of their work.
+
+Listed below are the functions of a VCS:
+
+Allows developers to work simultaneously.
+Does not allow overwriting each other’s changes.
+Maintains a history of every version.
+Following are the types of VCS:
+
+Centralized version control system (CVCS).
+Distributed/Decentralized version control system (DVCS).
+
+
+Git falls under distributed version control system.
+
+
+9:30 - 11:30 completed the tweet box exercise in JSBin
+12:30 - 1:15 React Tutorial -learned about DOM (virtual), MVC, components, and prop/state
+2:30-4:30 - learned environnment set up and tried but failed terribly
+4:30-5:30 -  resumed React tutorial
+5:45 - still learning- GIT; DVCS
+
+-Made a new repository named meghna-saxena.github.io
+-Went to terminal and cloned; $ git clone https://github.com/meghna-saxena/meghna-saxena.github.io
+-Changed directory by; $ cd meghna-saxena.github.io
+-Added an index file; ~/meghna-saxena.github.io$ echo "Hello World" > index.html
+-Confirmed by; ~/meghna-saxena.github.io$ ls -lrt
+total 4
+-rw-rw-r-- 1 meghna meghna 12 Aug 17 12:46 index.html
+
+
+-Add, commit and pushed the changes by; 
+~/meghna-saxena.github.io$ git add --all
+~/meghna-saxena.github.io$ git commit -m "Initial commit"
+
+ this msg came -->*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'meghna@ubuntuY.(none)')
+
+
+
+------------------------------------------
+followed by setting a global identity;
+~/meghna-saxena.github.io$ git config --global user.email "meghna.s1906@gmail.com"
+~/meghna-saxena.github.io$ git config --global user.name "Meghna"
+
+Pushed the changes
+~/meghna-saxena.github.io$ git push -u origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/meghna-saxena/meghna-saxena.github.io'
+
+What did i do wrong?
+
+
+
+
+
+
+
+
+meghna@ubuntuY:~/meghna-saxena.github.io$ echo "# meghna-saxena.github.io" >> README.mode
+meghna@ubuntuY:~/meghna-saxena.github.io$ git init
+Reinitialized existing Git repository in /home/meghna/meghna-saxena.github.io/.git/
+meghna@ubuntuY:~/meghna-saxena.github.io$ git add README.md
+meghna@ubuntuY:~/meghna-saxena.github.io$ git commit -m "first commit"
+[master (root-commit) ddb5b8a] first commit
+ 2 files changed, 2 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 index.html
+meghna@ubuntuY:~/meghna-saxena.github.io$ git remote add origin https://github.com/meghna-saxena/meghna-saxena.github.io.git
+fatal: remote origin already exists.
+meghna@ubuntuY:~/meghna-saxena.github.io$ git push -u origin master
+Username for 'https://github.com': "Meghna"         
+Password for 'https://"Meghna"@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/meghna-saxena/meghna-saxena.github.io/'
+meghna@ubuntuY:~/meghna-saxena.github.io$ git push -u origin master
+Username for 'https://github.com': meghna-saxena
+Password for 'https://meghna-saxena@github.com': 
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 292 bytes | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/meghna-saxena/meghna-saxena.github.io
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+meghna@ubuntuY:~/meghna-saxena.github.io$ 

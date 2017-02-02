@@ -1,0 +1,1 @@
+const is ES6 "variable". The only difference is its value is constant.

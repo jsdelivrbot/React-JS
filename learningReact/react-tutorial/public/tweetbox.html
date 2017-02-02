@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://fb.me/react-15.1.0.js"></script>
+<script src="https://fb.me/react-dom-15.1.0.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+ <script type="text/babel">
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+  <div id="container"></div>
+</body>
+</html>
+
+
+var TweetBox = React.createClass({
+  render: function() {
+    return (
+      <div className="well clearfix">
+        <textarea className="form-control"></textarea>
+        <br/>
+        <button className="btn btn-primary pull-right">Tweet</button>
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <TweetBox />,
+  document.getElementById("container")
+);
