@@ -11,13 +11,13 @@ const API_KEY = 'AIzaSyDo8CRg7nfVDp5JdvN5Om3vaRQv_6nqNQI'
 const App = () => {
 	return (
 		<div>
-		<SearchBar />
+			<SearchBar />
 		</div>
 		);
 	}
 
-	// 2.Take this component's generated HTML and put it on the page (in the DOM).
-	// <App/> turns it into component instance for rendering it.
+// 2.Take this component's generated HTML and put it on the page (in the DOM).
+// <App/> turns it into component instance for rendering it.
 
-	ReactDOM.render(<App />, document.querySelector('.container'));
 
+ReactDOM.render(<App />, document.querySelector('.container'));
