@@ -30,7 +30,7 @@ class App extends Component {
 
 		this.state = { videos: [] };
 
-		YTSearch({key: API_KEY, term: 'surfboards'},  (videos) => {
+		YTSearch({key: API_KEY, term: 'Michael Jackson'},  (videos) => {
 			this.setState ({ videos });
 			//In ES6, if key:value pair has common name, we can substitute like above.
 			//It means -- this.setState({ videos: videos });
