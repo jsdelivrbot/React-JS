@@ -29,10 +29,17 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { videos: [] };
+		this.state = { 
+			videos: [],
+			selectedVideo: null
+		};
 
 		YTSearch({key: API_KEY, term: 'Michael Jackson'},  (videos) => {
-			this.setState ({ videos });
+			this.setState ({ 
+				videos: videos,
+				selectedVideo: videos[0]
+
+				 });
 			//In ES6, if key:value pair has common name, we can substitute like above.
 			//It means -- this.setState({ videos: videos });
 		});
@@ -42,13 +49,14 @@ class App extends Component {
 		return (
 			<div>
 				<SearchBar />
-				<VideoDetail video = {this.state.videos [0]} />
+				<VideoDetail video = {this.state.selectedVideo} /> 
 				<VideoList videos = {this.state.videos} />
 			</div>
 			);	
 	}
 }
 
+//<VideoDetail video = {this.state.videos [0]} /> 
 
 // 2.Take this component's generated HTML and put it on the page (in the DOM).
 // <App/> turns it into component instance for rendering it.
