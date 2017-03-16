@@ -1,4 +1,5 @@
 //import React from 'react';
+import _ from 'lodash';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
@@ -89,11 +90,16 @@ videoSearch(term){
 	}
 
 render() {
+
+	const videoSearch = _.debounce(term => {this.videoSearch(term)}, 300);
+
+
 	return (
 			<div>
-				<SearchBar onSearchTermChange={term => this.videoSearch(term)} />
-				// <VideoDetail video = {this.state.videos [0]} />
+				<SearchBar onSearchTermChange={videoSearch} />
+
 				<VideoDetail video = {this.state.selectedVideo} /> 
+
 				<VideoList 
 					onVideoSelect = {selectedVideo => this.setState ({selectedVideo})}
 					videos = {this.state.videos} />
@@ -105,6 +111,8 @@ render() {
 //In VideoList videos = {this.state.videos} we are passing props from parent component to child.
 
 
+// <SearchBar onSearchTermChange={term => this.videoSearch(term)} />
+//replaced by <SearchBar onSearchTermChange={videoSearch} />
 
 //==============================================================================================
 
