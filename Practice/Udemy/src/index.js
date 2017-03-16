@@ -35,7 +35,10 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = { videos: [] };
+		this.state = { 
+			videos: [],
+			selectedVideo: null
+		};
 
 //To avoid the home page become empty,
 // cause this.state = an empty array of videos, we shift YTSearch data here
@@ -54,28 +57,37 @@ class App extends Component {
 //or drop function(data) and use arrow syntax
 
 YTSearch ({key: API_KEY, term:'surfboards'}, (videos) => {
-	this.setState ({ videos: videos });
-	
+	// this.setState ({ videos: videos });
+
 	//In ES6, if key:value pair has common name, we can condense the line like below.
 
-	this.setState ({ videos });
-});
+	// this.setState ({ videos });
+
+		this.setState ({ 
+			videos: videos, 
+			selectedVideo: videos[0]
+		});
+	});
 }
 
 
 render() {
 	return (
-		<div>
-		<SearchBar />
-		<VideoDetail video = {this.state.videos [0]} />
-		<VideoList videos = {this.state.videos} /> 
-		</div>
+			<div>
+				<SearchBar />
+				// <VideoDetail video = {this.state.videos [0]} />
+				<VideoDetail video = {this.state.selectedVideo} /> 
+				<VideoList 
+					onVideoSelect = {selectedVideo => this.setState ({selectedVideo})}
+					videos = {this.state.videos} />
+			</div>
 		);
 	}
 }
 
-//In <VideoList videos = {this.state.videos} /> 
-//we are passing props from parent component to child.
+//In VideoList videos = {this.state.videos} we are passing props from parent component to child.
+
+
 
 //Take this component's generated HTML, and put it on the page (in the DOM)
 
