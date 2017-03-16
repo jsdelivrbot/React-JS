@@ -40,6 +40,9 @@ class App extends Component {
 			selectedVideo: null
 		};
 
+		this.videoSearch('surfboards');
+	}
+
 //To avoid the home page become empty,
 // cause this.state = an empty array of videos, we shift YTSearch data here
 
@@ -56,25 +59,39 @@ class App extends Component {
 
 //or drop function(data) and use arrow syntax
 
-YTSearch ({key: API_KEY, term:'surfboards'}, (videos) => {
-	// this.setState ({ videos: videos });
+// YTSearch ({key: API_KEY, term:'surfboards'}, (videos) => {
+// 	// this.setState ({ videos: videos });
 
-	//In ES6, if key:value pair has common name, we can condense the line like below.
+// 	//In ES6, if key:value pair has common name, we can condense the line like below.
 
-	// this.setState ({ videos });
+// 	// this.setState ({ videos });
 
-		this.setState ({ 
-			videos: videos, 
-			selectedVideo: videos[0]
+// 		this.setState ({ 
+// 			videos: videos, 
+// 			selectedVideo: videos[0]
+// 		});
+// 	});
+// }
+
+
+
+//===========================================================================================
+//defining function for video search
+//insert YT search inside this function, cause we dont need duplicate code.
+
+videoSearch(term){
+		YTSearch({key: API_KEY, term: term}, (videos) => {
+			this.setState ({
+				videos: videos,
+				selectedVideo: videos[0]
+			 });
 		});
-	});
-}
-
+	}
 
 render() {
 	return (
 			<div>
-				<SearchBar />
+				<SearchBar onSearchTermChange={term => this.videoSearch(term)} />
 				// <VideoDetail video = {this.state.videos [0]} />
 				<VideoDetail video = {this.state.selectedVideo} /> 
 				<VideoList 
@@ -86,6 +103,10 @@ render() {
 }
 
 //In VideoList videos = {this.state.videos} we are passing props from parent component to child.
+
+
+
+//==============================================================================================
 
 
 
