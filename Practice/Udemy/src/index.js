@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
+import VideoList from './components/video_list';
 
 const API_KEY = 'AIzaSyCGMyIVw9YmF43dLDd0RzFDGylEcjW07WU'
 
@@ -44,6 +45,12 @@ class App extends Component {
 // });
 // }
 
+
+//=========================================================================================
+
+
+
+
 //or drop function(data) and use arrow syntax
 
 YTSearch ({key: API_KEY, term:'surfboards'}, (videos) => {
@@ -60,15 +67,14 @@ render() {
 	return (
 		<div>
 		<SearchBar />
+		<VideoList videos = {this.state.videos} /> 
 		</div>
 		);
 	}
 }
 
-
-
-
-
+//In <VideoList videos = {this.state.videos} /> 
+//we are passing props from parent component to child.
 
 //Take this component's generated HTML, and put it on the page (in the DOM)
 
