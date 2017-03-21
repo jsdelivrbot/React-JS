@@ -16,8 +16,13 @@ export function fetchWeather(city) {
 	const url = `${ROOT_URL}&q=${city},us`;
 	const request = axios.get(url); //ajax request with axios
 
+	// console.log('Request:', request);
+
 	return {
 		type: FETCH_WEATHER,
-		payload: request
+		payload: request //also k/a promise
 	};
 }
+
+//middleware stops the payload promise at first, unwraps and resolve it, 
+//and proceed it further as 'request' to reducers
