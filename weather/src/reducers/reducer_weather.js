@@ -17,8 +17,8 @@ export default function(state=[], action) {
 	return state;
 }
 
-/*Avoiding State mutation in reducers-
+// Avoiding State mutation in reducers-
 
-Concat doesn't change the old array
-it makes a new array with old and new stuff added
-we arenot mutating state, we are creating new version of state /*
+// Concat doesn't change the old array
+// it makes a new array with old and new stuff added
+// we arenot mutating state, we are creating new version of state 
