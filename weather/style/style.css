@@ -10,3 +10,11 @@ td, th {
 svg {
 	height: 150px;
 }
+
+td:first-of-type, td:first-of-type > div {
+	height: 200px;
+	width: 250px;
+} 
+
+/*td - first of each row
+and td first of each row and its child div container which is going to be GoogleMap*/
