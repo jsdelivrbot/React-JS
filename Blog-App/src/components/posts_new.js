@@ -1,9 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { reduxForm }  from 'redux-form';
 import { createPost } from '../actions/index';
 import { Link } from 'react-router';
 
 class PostsNew extends Component {
+
+	static contextTypes = {
+		router: PropTypes.object
+	};
+	//this.context.router
+	//we are  getting instance of router
+
+	onSubmit(props) {
+		this.props.createPost(props) //when createPost is successfully made, or a promise is resolved
+		.then(() => {
+			//blog post has been created, navigate the user to index.
+			//We navigate by calling this.context.router.push with the new path to navigate to
+			this.context.router.push ('/');
+		});
+	}
+
+
+
 	render() {
 		const {fields:{title,categories,content}, handleSubmit} = this.props;
 		// similar to - 
@@ -12,7 +30,8 @@ class PostsNew extends Component {
 
 
 		return (
-			<form onSubmit = {handleSubmit(this.props.createPost)}>
+			// <form onSubmit = {handleSubmit(this.props.createPost)}> //replace by following
+			<form onSubmit = {handleSubmit(this.onSubmit.bind(this))}>
 				<h3>Create A New Post</h3>
 
 				<div className={`form-group ${title.touched && title.invalid ? 'has-danger' : ''} `}>
