@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm }  from 'redux-form';
+import { createPost } from '../actions/index';
 
 class PostsNew extends Component {
 	render() {
@@ -10,12 +11,11 @@ class PostsNew extends Component {
 
 
 		return (
-			<form onSubmit = {handleSubmit}>
+			<form onSubmit = {handleSubmit(this.props.createPost)}>
 				<h3>Create A New Post</h3>
 				<div className="form-group">
 					<label>Title</label>
-					<input type="text" className="form-control" {...title} /> //Destructuring of object
-					//We are destructuring the object, so Redux form can entirely control input tag 
+					<input type="text" className="form-control" {...title} /> 
 				</div>
 
 				<div className="form-group">
@@ -34,10 +34,20 @@ class PostsNew extends Component {
 	}
 }
 	
+
+//======================================================================================
+//======================================================================================
+
+//connect: first argument is mapStateToProps, second is mapDispatchToProps
+//reduxForm: first argument is form config, second is mapStateToProps, and third is mapDispatchToProps
+
+
 export default reduxForm ({
 	form: 'PostsNewForm',
 	fields: ['title','categories','content']
-}) (PostsNew);
+}, null, {createPost}) (PostsNew);
+
+
 
 
 //===============================================================================
@@ -52,3 +62,7 @@ export default reduxForm ({
 // 			}
 // 		}
 // }
+
+
+//Destructuring of object {...title}
+//We are destructuring the object, so Redux form can entirely control input tag 
