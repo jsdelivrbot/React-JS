@@ -85,15 +85,17 @@ So far our file structure looks like this:
 - yarn.lock
 
 Create a new folder ```src``` and add an index.js file and an index.html file.
- ```mkdir src```
-```cd src```
-```touch index.js```
-```touch index.html```
-```cd .. ```
+- ```mkdir src```
+- ```cd src```
+- ```touch index.js```
+- ```touch index.html```
+- ```cd .. ```
 
 Open up ```index.js``` which is the webpack entry file and add:
+
 ```console.log('Hey guys and ladies!!')
 ```
+
 Update ```index.html``` to:
 ```
 <!DOCTYPE html>
@@ -131,15 +133,15 @@ Add the bundled file to our HTML by inserting ```<script src="/bundle.js"></scri
  - ```cd ../..```
 
 
-> Files structure looks like this -
+Files structure looks like this -
 
-|-- src   
+>|-- src   
 - components
          |-- App.jsx
 - index.html
 - index.js
 
-|--babelrc
+>|--babelrc
 |--package.json
 |-- webpack.config.js
 |--yarn.lock
@@ -169,6 +171,6 @@ export default class App extends React.Component {
  ```
 > yarn start
 
-And here we got with a full React set-up!
+And here we go with a full React set-up!
 
 [Reference](https://goo.gl/LLgXuX)
