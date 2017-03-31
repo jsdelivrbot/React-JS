@@ -1,15 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { combineReducers } from 'redux';
+import PostsReducer from './reducer_posts';
+import { reducer as formReducer } from 'redux-form';
 
-import App from './components/app';
-import reducers from './reducers';
+const rootReducer = combineReducers({
+  posts: PostsReducer,
+  form: formReducer
+});
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+export default rootReducer;
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
