@@ -1,3 +1,7 @@
+body {
+   background-color: red;
+}
+
 .search-bar {
 	margin:20px;
 	text-align:center;
@@ -5,6 +9,10 @@
 
 .search-bar input {
 	width:75%;
+	background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
 }
 
 .video-item img {
@@ -25,3 +33,4 @@
 .list-group-item:hover {
 	background-color:#eee
 }
+
