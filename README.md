@@ -17,3 +17,6 @@ Unidirectional data flow and Flux − React implements one way data flow which m
 ### React Limitations
 - React only covers view layer of the app so you still need to choose other technologies to get a complete tooling set for development.
 - React is using inline templating and JSX. This can seem awkward to some developers.
+
+```Footnotes:```
+React Setup is explained in ReadMe file in environmentalSetup directory.
