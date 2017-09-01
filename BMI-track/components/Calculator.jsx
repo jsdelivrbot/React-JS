@@ -60,7 +60,7 @@ export default class Calculator extends React.Component {
     return {
       height: 156,
       weight: 76,
-      bmi: 20.9,
+      bmi: 20.8,
       bmiClass: 'Normal Weight'
     };
   }
