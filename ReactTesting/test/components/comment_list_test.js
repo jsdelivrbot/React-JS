@@ -5,7 +5,7 @@ describe ('CommentList', () => {
 	let component;
 
 	beforeEach (() => {
-		const props = { comment:['New comment', 'Other new comment'] };
+		const props = { comments:['New comment', 'Other new comment'] };
 		component = renderComponent(CommentList, null, props);
 	});
 
@@ -14,7 +14,7 @@ describe ('CommentList', () => {
 	});
 
 	it ('shows each comment that is provided', () => {
-		expect (commponent).to.contain('New comment');
-		expect (commponent).to.contain('Other new comment');
+		expect (component).to.contain('New comment');
+		expect (component).to.contain('Other new comment');
 	});
 });
