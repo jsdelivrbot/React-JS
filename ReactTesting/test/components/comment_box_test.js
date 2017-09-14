@@ -21,11 +21,12 @@ describe ('CommentBox', () => {
 	});
 
 	describe ('entering some text', () => {
-		beforeEach () => {
+		beforeEach (() => {
 			component.find('textarea').simulate('change', 'new comment');
 		});
 
 		it ('shows text that gets entered', () => {
+			expect (component.find('textarea')).to.have.value('new comment');
 
 		});
 
